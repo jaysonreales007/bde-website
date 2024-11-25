@@ -312,7 +312,7 @@ function App() {
             </div>
 
             <div className="token-card">
-              <div className="card-icon">👥</div>
+              <div className="card-icon">⚡</div>
               <h4>Circulating Supply</h4>
               <p className="stat">{tokenData.circulatingSupply}</p>
               <p className="description">Total tokens in circulation</p>
@@ -324,6 +324,13 @@ function App() {
               <p className="stat">{tokenData.volume24h}</p>
               <p className="description">24h Trading Volume</p>
             </div>
+          </div>
+
+          <div className="token-card main-card">
+            <div className="card-icon">🗺️</div>
+            <h4>Token Roadmap</h4>
+            <p className="coming-soon">Coming Soon</p>
+            <p className="description">Our strategic development plan</p>
           </div>
         </div>
       </section>

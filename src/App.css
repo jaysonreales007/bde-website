@@ -700,3 +700,18 @@ h1 {
     display: none;
   }
 }
+
+.coming-soon {
+  color: var(--primary-purple);
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  font-style: italic;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
