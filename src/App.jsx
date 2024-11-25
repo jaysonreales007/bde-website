@@ -16,12 +16,12 @@ function App() {
   
   const tradeLinks = [
     { 
-      name: 'Buy BDE', 
+      name: 'Buy $BDE', 
       link: `${UNISWAP_BASE_URL}?outputCurrency=${TOKEN_ADDRESS}&chain=base`, 
       primary: true 
     },
     { 
-      name: 'Sell BDE', 
+      name: 'Sell $BDE', 
       link: `${UNISWAP_BASE_URL}?inputCurrency=${TOKEN_ADDRESS}&chain=base`, 
       primary: false 
     }
@@ -37,7 +37,7 @@ function App() {
 
   const [tokenDetails, setTokenDetails] = useState({
     name: 'BDE Token',
-    symbol: 'BDE',
+    symbol: '$BDE',
     network: 'Base',
     totalSupply: '900,000,000',
     decimals: '18',
@@ -166,11 +166,10 @@ function App() {
         "toolbar_bg": "#f1f3f6",
         "enable_publishing": false,
         "hide_side_toolbar": false,
-        "allow_symbol_change": true,
+        "allow_symbol_change": false,
         "container_id": "tradingview_widget",
         "studies": [
-          "Volume@tv-basicstudies",
-          "RSI@tv-basicstudies"
+          "Volume@tv-basicstudies"
         ],
         "show_popup_button": true,
         "popup_width": "1000",
@@ -278,7 +277,7 @@ function App() {
                 </div>
                 <div className="detail-item">
                   <span className="label">Symbol:</span>
-                  <span className="value">{tokenDetails.symbol}</span>
+                  <span className="value">${tokenDetails.symbol}</span>
                 </div>
                 <div className="detail-item">
                   <span className="label">Network:</span>
@@ -300,14 +299,14 @@ function App() {
             <div className="token-card">
               <div className="card-icon">💰</div>
               <h4>Market Cap</h4>
-              <p className="stat">{tokenData.marketCap}</p>
+              <p className="stat">${tokenData.marketCap}</p>
               <p className="description">Live market capitalization</p>
             </div>
 
             <div className="token-card">
               <div className="card-icon">🔒</div>
               <h4>Liquidity</h4>
-              <p className="stat">{tokenData.liquidity}</p>
+              <p className="stat">${tokenData.liquidity}</p>
               <p className="description">Total Liquidity Locked</p>
             </div>
 
@@ -321,18 +320,19 @@ function App() {
             <div className="token-card">
               <div className="card-icon">📊</div>
               <h4>Volume 24h</h4>
-              <p className="stat">{tokenData.volume24h}</p>
+              <p className="stat">${tokenData.volume24h}</p>
               <p className="description">24h Trading Volume</p>
             </div>
           </div>
-
-          <div className="token-card main-card">
-            <div className="card-icon">🗺️</div>
-            <h4>Token Roadmap</h4>
+        </div>
+      </section>
+      
+      <section className="roadmap">
+        <h2>Token Roadmap</h2>
+          <div className="roadmap-card main-card">
             <p className="coming-soon">Coming Soon</p>
             <p className="description">Our strategic development plan</p>
           </div>
-        </div>
       </section>
 
       {/* Add Footer */}
@@ -356,10 +356,19 @@ function App() {
             >
               DexTools
             </a>
+            <span className="footer-divider">•</span>
+            <a 
+              href="https://dexscreener.com/base/0x2377667ba651f927bca8977feec76801dcf6debc" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              DexScreener
+            </a>
           </div>
           <p className="developer">
             Developer: <a 
-              href="https://warpcast.com/senpaiii-kun.base.eth" 
+              href="https://warpcast.com/swenpai"
               target="_blank" 
               rel="noopener noreferrer"
               className="developer-link"
