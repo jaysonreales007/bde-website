@@ -519,12 +519,29 @@ h1 {
 
 /* Update SweetAlert styles */
 .swal2-popup {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif !important;
+  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif !important;
 }
 
 .swal2-toast {
   background: var(--primary-purple-dark) !important;
   color: white !important;
+}
+
+@media (max-width: 768px) {
+  .swal2-popup {
+    width: 90% !important; /* Make popup width responsive */
+    margin: 0 auto !important;
+  }
+  
+  .swal2-toast {
+    max-width: 90% !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 20px !important;
+  }
 }
 
 .logo-container {

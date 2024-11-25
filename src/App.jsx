@@ -111,6 +111,8 @@ function App() {
   const handleCopy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
+      const isMobile = window.innerWidth <= 768;
+      
       Swal.fire({
         title: 'Copied!',
         text: 'Contract address copied to clipboard',
@@ -120,8 +122,8 @@ function App() {
         confirmButtonColor: '#8B5CF6',
         timer: 2000,
         timerProgressBar: true,
-        toast: true,
-        position: 'top-end',
+        toast: !isMobile, // Only use toast on desktop
+        position: isMobile ? 'center' : 'top-end',
         showConfirmButton: false
       });
     } catch (err) {
@@ -131,7 +133,8 @@ function App() {
         icon: 'error',
         background: '#1a1a1a',
         color: '#fff',
-        confirmButtonColor: '#8B5CF6'
+        confirmButtonColor: '#8B5CF6',
+        position: 'center'
       });
     }
   };
@@ -199,7 +202,7 @@ function App() {
             <img src="/pfp.jpg" alt="BDE Token Logo" className="logo-image" />
           </div>
           <h1>$BDE Token</h1>
-          <p className="subtitle">$BDE: Bold moves, big rewards!</p>
+          <p className="subtitle">$BDE: Bold Moves, Big Rewards!</p>
           
           <div className="price-display">
             <div className="price-card">
